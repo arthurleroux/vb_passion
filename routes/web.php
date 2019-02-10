@@ -19,26 +19,28 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
 Route::get('/rallye_des_anglaises', function() {
     return view('statics.rallye_anglaises');
-});
+})->name('rallye_anglaises');
 
 Route::get('/rallye_carte', function() {
     return view('statics.rallye_carte');
-});
+})->name('rallye_carte');
 
 Route::get('/evenements', function() {
     return view('statics.evenements');
-});
+})->name('evenements');
 
 Route::get('/partenaires', function() {
     return view('statics.partenaires');
-});
+})->name('partenaires');
 
 Route::get('/gallerie', function() {
-    return view('statics.gellerie');
-});
+    return view('statics.gallerie');
+})->name('gallerie');
 
 Route::get('/contact', function() {
     return view('statics.contact');
-});
+})->name('contact');

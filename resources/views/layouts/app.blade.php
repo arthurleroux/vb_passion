@@ -33,7 +33,24 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('rallye_anglaises') }}">Le rallye des anglaises</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('rallye_carte') }}">Rallye à la carte</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('evenements') }}">Evenements</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('partenaires') }}">Partenaires</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('gallerie') }}">Gallerie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
