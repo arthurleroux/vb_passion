@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Car;
+use App\Models\Car;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
