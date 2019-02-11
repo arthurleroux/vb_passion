@@ -21,7 +21,7 @@ Route::get('/', function() {
     return view('home');
 })->name('home');
 
-
+Route::resource('/car', 'CarController');
 
 Route::get('/rallye_des_anglaises', function() {
     return view('statics.rallye_anglaises');
@@ -39,9 +39,9 @@ Route::get('/partenaires', function() {
     return view('statics.partenaires');
 })->name('partenaires');
 
-Route::get('/gallerie', function() {
-    return view('statics.gallerie');
-})->name('gallerie');
+Route::get('/galerie', function() {
+    return view('statics.galerie');
+})->name('galerie');
 
 Route::get('/contact', function() {
     return view('statics.contact');

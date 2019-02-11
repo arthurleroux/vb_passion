@@ -16,12 +16,12 @@ class CreateCarsTable extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('brand');
-            $table->string('model');
-            $table->integer('year')->unsigned();
-            $table->integer('horsepower')->unsigned();
-            $table->enum('fuel', ['gasoline', 'diesel']);
-            $table->integer('price')->unsigned();
+            $table->string('marque');
+            $table->string('modele');
+            $table->integer('annee')->unsigned();
+            $table->integer('puissance')->unsigned();
+            $table->enum('carburant', ['essence', 'diesel']);
+            $table->integer('prix')->unsigned();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

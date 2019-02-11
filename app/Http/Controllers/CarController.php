@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class CarsController extends Controller
+class CarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +25,7 @@ class CarsController extends Controller
      */
     public function create()
     {
-        //
+        return view('cars.create');
     }
 
     /**
@@ -34,7 +36,12 @@ class CarsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $car = new Car;
+        $input = $request->input();
+        $input['user_id'] = Auth::user()->id;
+
+        $car->fill($input)->save();
     }
 
     /**

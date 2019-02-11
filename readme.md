@@ -1,12 +1,18 @@
 ```
 
- docker rm -f $(docker ps -a -q)   
+docker rm -f $(docker ps -a -q)   
 
 ```
 
 ```
 
 php artisan config:cache      
+
+```
+
+```
+
+docker-compose up    
 
 ```
 

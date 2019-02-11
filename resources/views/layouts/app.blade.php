@@ -46,7 +46,7 @@
                             <a class="nav-link" href="{{ route('partenaires') }}">Partenaires</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('gallerie') }}">Gallerie</a>
+                            <a class="nav-link" href="{{ route('galerie') }}">Galerie</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('contact') }}">Contact</a>

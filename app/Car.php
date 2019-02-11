@@ -8,12 +8,12 @@ class Car extends Model
 {
     protected $fillable = [
         'user_id',
-        'brand',
-        'model',
-        'year',
-        'horsepower',
-        'fuel',
-        'price'
+        'marque',
+        'modele',
+        'annee',
+        'puissance',
+        'carburant',
+        'prix'
     ];
 
     public function user() {
