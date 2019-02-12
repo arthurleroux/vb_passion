@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\Auth;
 
 class CarController extends Controller
 {
+
+    public function __construct() {
+
+        $this->middleware('auth')->only(['create', 'store', 'edit', 'update']);
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +22,9 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        $cars = Car::all(); // affiche tout les articles
+
+        return view('cars.index', compact('cars'));
     }
 
     /**
@@ -49,6 +58,8 @@ class CarController extends Controller
         $input['user_id'] = Auth::user()->id;
 
         $car->fill($input)->save();
+
+        return redirect()->route('car.index')->with('success', 'Voiture enregistrée correctement');
     }
 
     /**

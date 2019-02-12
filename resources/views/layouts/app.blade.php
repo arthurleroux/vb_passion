@@ -33,11 +33,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('rallye_anglaises') }}">Le rallye des anglaises</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('rallye_carte') }}">Rallye à la carte</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Rallyes
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link" href="{{ route('rallye_anglaises') }}">Le rallye des anglaises</a>
+                                <a class="nav-link" href="{{ route('rallye_carte') }}">Rallye à la carte</a>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('evenements') }}">Evenements</a>
@@ -51,6 +55,19 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                         </li>
+                        @auth
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Location
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="nav-link" href="{{ route('car.create') }}">Mettre une voiture à louer</a>
+                                    <a class="nav-link" href="{{ route('show_owned_cars') }}">Mes voitures en location</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="nav-link" href="{{ route('car.index') }}">Louer une voiture</a>
+                                </div>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->

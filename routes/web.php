@@ -46,3 +46,7 @@ Route::get('/galerie', function() {
 Route::get('/contact', function() {
     return view('statics.contact');
 })->name('contact');
+
+Route::get('/show_owned_cars', function() {
+    return view('cars.show_owned_cars');
+})->name('show_owned_cars');
