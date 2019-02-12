@@ -59,7 +59,7 @@ class CarController extends Controller
 
         $car->fill($input)->save();
 
-        return redirect()->route('car.index')->with('success', 'Voiture enregistrée correctement');
+        return redirect()->route('show_owned_cars')->with('success', 'Voiture enregistrée correctement');
     }
 
     /**
@@ -104,6 +104,10 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $car = Car::findOrFail($id);
+
+        $car->delete();
+
+        return redirect()->route('show_owned_cars')->with('success', 'Voiture supprimée correctement');
     }
 }

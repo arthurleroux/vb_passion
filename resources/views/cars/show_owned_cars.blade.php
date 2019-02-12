@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <div class="container text-center">
+        @include('errors.message')
+    </div>
+
     @if(count(Auth::user()->cars) > 0)
         <div class="container">
             @foreach(Auth::user()->cars as $car)
@@ -14,6 +19,14 @@
                         <li>{{ $car->carburant }}</li>
                         <li>{{ $car->prix }} €</li>
                     </ul>
+                    {!! Form::model($car,array(
+                                 'route' => array('car.destroy', $car->id),
+                                 'method' => 'DELETE'))
+                                 !!}
+                    {!! Form::submit('Supprimer', ['class' => 'btn btn-link']) !!}
+
+                    {!! Form::close() !!}
+
                 </div>
             @endforeach
         </div>
