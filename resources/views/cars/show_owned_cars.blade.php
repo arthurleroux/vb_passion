@@ -19,6 +19,8 @@
                         <li>{{ $car->carburant }}</li>
                         <li>{{ $car->prix }} €</li>
                     </ul>
+                    <a href="{{ route('car.edit', $car->id) }}" class="btn btn-link">Modifier voiture</a>
+
                     {!! Form::model($car,array(
                                  'route' => array('car.destroy', $car->id),
                                  'method' => 'DELETE'))

@@ -81,7 +81,8 @@ class CarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $car = Car::findOrFail($id);
+        return view('cars.edit', compact('car'));
     }
 
     /**
@@ -93,7 +94,19 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'marque'      => 'required',
+            'modele'      => 'required',
+            'annee'       => 'required',
+            'puissance'   => 'required',
+            'prix'        => 'required'
+        ]);
+
+        $car = Car::findOrFail($id);
+        $input = $request->input();
+        $car->fill($input)->save();
+
+        return redirect()->route('show_owned_cars')->with('success', 'Voiture modifiée correctement');
     }
 
     /**
