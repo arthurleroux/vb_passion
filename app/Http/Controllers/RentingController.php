@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Renting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class RentingController extends Controller
 {
@@ -26,7 +27,8 @@ class RentingController extends Controller
      */
     public function create()
     {
-        //
+        $id_car = Input::get('id_car');
+        return view('rentings.create', ['id_car' => $id_car]);
     }
 
     /**
