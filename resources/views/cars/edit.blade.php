@@ -5,8 +5,7 @@
         @include('errors.message')
     </div>
     @if(Auth::check()
-        && (Auth::user()->id == $car->user_id
-        || Auth::user()->isAdmin)
+        && (Auth::user()->id == $car->user_id)
     )
     <div class="container">
         <div class="row">
@@ -94,9 +93,11 @@
     </div>
 
     @else
-        <div class="alert-danger alert">
-            <div class="text-center">
-                <p>Vous n'avez pas les droits nécessaires</p>
+        <div class="container">
+            <div class="alert-danger alert">
+                <div class="text-center">
+                    <p>Vous n'avez pas les droits nécessaires</p>
+                </div>
             </div>
         </div>
     @endif
