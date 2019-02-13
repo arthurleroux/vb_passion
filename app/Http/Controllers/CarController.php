@@ -22,8 +22,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        $cars = Car::all(); // affiche tout les articles
-
+        $cars = Car::all();
         return view('cars.index', compact('cars'));
     }
 

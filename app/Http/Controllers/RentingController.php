@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Renting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RentingController extends Controller
 {
@@ -13,7 +15,8 @@ class RentingController extends Controller
      */
     public function index()
     {
-        //
+        $rentings = Renting::all();
+        return view('rentings.index', compact('rentings'));
     }
 
     /**
@@ -34,7 +37,18 @@ class RentingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'car_id'        => 'required',
+            'owner_id'      => 'required'
+        ]);
+
+        $renting = new Renting;
+        $input = $request->input();
+        $input['customer_id'] = Auth::user()->id;
+
+        $renting->fill($input)->save();
+
+        return redirect()->route('car.index')->with('success', 'Voiture louée correctement');
     }
 
     /**
