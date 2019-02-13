@@ -22,6 +22,7 @@ Route::get('/', function() {
 })->name('home');
 
 Route::resource('/car', 'CarController');
+Route::resource('/renting', 'RentingController');
 
 Route::get('/rallye_des_anglaises', function() {
     return view('statics.rallye_anglaises');

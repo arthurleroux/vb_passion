@@ -24,7 +24,7 @@ class CreateCarsTable extends Migration
             $table->integer('prix')->unsigned();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
