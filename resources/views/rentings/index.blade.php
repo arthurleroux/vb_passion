@@ -11,8 +11,8 @@
                     <b>{{ $renting->car->marque }}</b>
                 </div>
                 <ul>
-                    <li>{{ $renting->owner->name }}</li>
-                    <li>{{ $renting->customer->name }}</li>
+                    <li>{{ $renting->car->user->name }}</li>
+                    <li>{{ $renting->user->name }}</li>
                 </ul>
             </div>
         @endforeach

@@ -18,26 +18,6 @@
                 </ul>
                 @if(Auth::user()->id != $car->user_id)
                     <a href="{{ route('renting.create', ['id_car' => $car->id]) }}">Louer</a>
-                {{--{!! Form::open(array(
-                'route' => 'renting.store',
-                'method' => 'POST'
-                )) !!}
-
-                    {!! Form::hidden('car_id', $car->id, [
-                        'class' => 'form-control'
-                        ])
-                    !!}
-
-                    {!! Form::hidden('owner_id', $car->user_id, [
-                        'class' => 'form-control'
-                        ])
-                    !!}
-
-                    {!! Form::submit('Louer la voiture',
-                        ['class' => 'btn btn-link'])
-                    !!}
-
-                    {!! Form::close() !!}--}}
                 @endif
             </div>
         @endforeach

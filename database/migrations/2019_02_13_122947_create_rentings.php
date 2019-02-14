@@ -15,13 +15,11 @@ class CreateRentings extends Migration
     {
         Schema::create('rentings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('owner_id')->unsigned();
-            $table->integer('customer_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->integer('car_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('owner_id')->references('id')->on('users');
-            $table->foreign('customer_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('car_id')->references('id')->on('cars');
         });
     }

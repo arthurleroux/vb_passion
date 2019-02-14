@@ -7,16 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Renting extends Model
 {
     protected $fillable = [
-        'customer_id',
-        'owner_id',
+        'user_id',
         'car_id'
     ];
 
-    public function customer() {
-        return $this->belongsTo('App\Models\User');
-    }
-
-    public function owner() {
+    public function user() {
         return $this->belongsTo('App\Models\User');
     }
 

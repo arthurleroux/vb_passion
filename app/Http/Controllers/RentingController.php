@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use App\Models\Renting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,6 +10,13 @@ use Illuminate\Support\Facades\Input;
 
 class RentingController extends Controller
 {
+
+    public function __construct() {
+
+        $this->middleware('auth');
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -27,8 +35,8 @@ class RentingController extends Controller
      */
     public function create()
     {
-        $id_car = Input::get('id_car');
-        return view('rentings.create', ['id_car' => $id_car]);
+        $car = Car::findOrFail(Input::get('id_car'));
+        return view('rentings.create', compact('car'));
     }
 
     /**
@@ -40,13 +48,12 @@ class RentingController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'car_id'        => 'required',
-            'owner_id'      => 'required'
+            'car_id'        => 'required'
         ]);
 
         $renting = new Renting;
         $input = $request->input();
-        $input['customer_id'] = Auth::user()->id;
+        $input['user_id'] = Auth::user()->id;
 
         $renting->fill($input)->save();
 
