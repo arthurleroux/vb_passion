@@ -73,7 +73,7 @@ class ProfileController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255',
+            'email' => 'unique:users,email,'.$id
         ]);
 
         $profile = User::findOrFail($id);
