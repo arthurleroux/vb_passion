@@ -15,7 +15,6 @@
                     <li>{{ $renting->user->name }}</li>
                 </ul>
             </div>
-            
         @endforeach
     </div>
 @endsection
