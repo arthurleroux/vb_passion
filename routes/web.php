@@ -23,6 +23,9 @@ Route::get('/', function() {
 
 Route::resource('/car', 'CarController');
 Route::resource('/renting', 'RentingController');
+
+Route::get('/profile/edit_password/{id}', 'ProfileController@editPassword')->name('edit_password');
+Route::put('/profile/update_password/{id}', 'ProfileController@updatePassword')->name('update_password');
 Route::resource('/profile', 'ProfileController');
 
 Route::get('/rallye_des_anglaises', function() {

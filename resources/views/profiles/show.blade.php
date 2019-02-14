@@ -11,6 +11,7 @@
                     <li>Adresse email : {{ $profile->email }}</li>
                 </ul>
                 <a class="btn btn-link" href="{{ route('profile.edit', Auth::id()) }}">Modifier mon profil</a>
+                <a href="{{ route('edit_password',  Auth::id()) }}">Modifier mon mot de passe</a>
             @else
                 <div class="alert-danger alert">
                     <div class="text-center">

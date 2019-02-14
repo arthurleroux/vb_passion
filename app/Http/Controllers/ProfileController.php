@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -78,6 +79,25 @@ class ProfileController extends Controller
 
         $profile = User::findOrFail($id);
         $input = $request->input();
+        $profile->fill($input)->save();
+
+        return redirect()->route('profile.show', $id)->with('success', 'Votre modification a bien étée prise en compte');
+    }
+
+    public function editPassword($id) {
+        $profile = User::findOrFail($id);
+        return view ('profiles.edit_password', compact('profile'));
+    }
+
+    public function updatePassword(Request $request, $id)
+    {
+        $this->validate($request, [
+            'password' => 'required|confirmed|min:6',
+        ]);
+
+        $profile = User::findOrFail($id);
+        $input = $request->input();
+        $input['password'] = Hash::make($request->password);
         $profile->fill($input)->save();
 
         return redirect()->route('profile.show', $id)->with('success', 'Votre modification a bien étée prise en compte');
