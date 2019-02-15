@@ -8,7 +8,7 @@ class Image extends Model
 {
     protected $fillable = [
         'car_id',
-        'url'
+        'name'
     ];
 
     public function car() {

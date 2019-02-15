@@ -60,10 +60,13 @@ class CarController extends Controller
 
         $car->fill($input)->save();
 
-        $request->file('image')->move(public_path('/img'));
-        $img_name = request()->image;
 
-        $image = new Image(['url' => $img_name]);
+        $file = request()->image;
+        $file_name= $file->getClientOriginalName();
+        $img_name = time().'_'.$file_name;
+        $request->file('image')->move(public_path('/img'), $img_name);
+
+        $image = new Image(['name' => $img_name]);
         $car->images()->save($image);
 
         //return redirect()->route('show_owned_cars')->with('success', 'Voiture enregistrée correctement');
