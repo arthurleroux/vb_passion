@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -49,7 +50,8 @@ class CarController extends Controller
             'modele'      => 'required',
             'annee'       => 'required',
             'puissance'   => 'required',
-            'prix'        => 'required'
+            'prix'        => 'required',
+            'image'       => 'required'
         ]);
 
         $car = new Car;
@@ -58,7 +60,13 @@ class CarController extends Controller
 
         $car->fill($input)->save();
 
-        return redirect()->route('show_owned_cars')->with('success', 'Voiture enregistrée correctement');
+        $request->file('image')->move(public_path('/img'));
+        $img_name = request()->image;
+
+        $image = new Image(['url' => $img_name]);
+        $car->images()->save($image);
+
+        //return redirect()->route('show_owned_cars')->with('success', 'Voiture enregistrée correctement');
     }
 
     /**

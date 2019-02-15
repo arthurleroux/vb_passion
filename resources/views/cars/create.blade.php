@@ -7,6 +7,7 @@
                 <h4>Ajouter une voiture</h4>
 
                 {!! Form::open(array(
+                'files' => 'true',
                 'route' => 'car.store',
                 'method' => 'POST'
                 )) !!}
@@ -71,6 +72,13 @@
                         'class' => 'form-control',
                         'placeholder' => 'Prix par jour'
                         ])
+                    !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('image', 'Image') !!}
+                    <br>
+                    {!! Form::file('image')
                     !!}
                 </div>
 
