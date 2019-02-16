@@ -7,7 +7,7 @@
                 <h4>Ajouter une voiture</h4>
 
                 {!! Form::open(array(
-                'files' => 'true',
+                'files' => true,
                 'route' => 'car.store',
                 'method' => 'POST'
                 )) !!}
@@ -76,9 +76,11 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('image', 'Image') !!}
+                    {!! Form::label('images', 'Image') !!}
                     <br>
-                    {!! Form::file('image')
+                    {!! Form::file('images[]')
+                    !!}
+                    {!! Form::file('images[]')
                     !!}
                 </div>
 

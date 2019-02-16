@@ -51,7 +51,7 @@ class CarController extends Controller
             'annee'       => 'required',
             'puissance'   => 'required',
             'prix'        => 'required',
-            'image'       => 'required'
+            'images'      => 'required'
         ]);
 
         $car = new Car;
@@ -60,16 +60,16 @@ class CarController extends Controller
 
         $car->fill($input)->save();
 
+        $files = request()->images;
+        foreach ($files as $file) {
+            $file_name= $file->getClientOriginalName();
+            $img_name = time().'_'.$file_name;
+            $file->move(public_path('/img/cars/car_'.$car->id), $img_name);
+            $image = new Image(['name' => $img_name]);
+            $car->images()->save($image);
+        }
 
-        $file = request()->image;
-        $file_name= $file->getClientOriginalName();
-        $img_name = time().'_'.$file_name;
-        $request->file('image')->move(public_path('/img'), $img_name);
-
-        $image = new Image(['name' => $img_name]);
-        $car->images()->save($image);
-
-        //return redirect()->route('show_owned_cars')->with('success', 'Voiture enregistrée correctement');
+        return redirect()->route('show_owned_cars')->with('success', 'Voiture enregistrée correctement');
     }
 
     /**
