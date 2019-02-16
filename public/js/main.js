@@ -8,5 +8,7 @@ $(document).ready(function() {
         else {
             $('#error').html('Nombre de photos maximum atteint');
         }
-    })
+    });
+
+    $('.slider').slick();
 });
