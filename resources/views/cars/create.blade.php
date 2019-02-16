@@ -76,12 +76,15 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('images', 'Image') !!}
-                    <br>
-                    {!! Form::file('images[]')
-                    !!}
-                    {!! Form::file('images[]')
-                    !!}
+                    <div id="files">
+                        {!! Form::label('images', 'Images') !!}
+                        <br>
+                        {!! Form::file('images[]', [
+                            'class' => 'input_file'
+                        ])
+                        !!}
+                    </div>
+                    <div id="error"></div>
                 </div>
 
                 <div class="text-center">

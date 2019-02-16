@@ -55,4 +55,4 @@ Route::get('/contact', function() {
 
 Route::get('/show_owned_cars', function() {
     return view('cars.show_owned_cars');
-})->name('show_owned_cars');
+})->name('show_owned_cars')->middleware('auth');
