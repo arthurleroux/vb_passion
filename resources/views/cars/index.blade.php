@@ -23,6 +23,7 @@
                         <li>{{ $car->puissance }}</li>
                         <li>{{ $car->carburant }}</li>
                         <li>{{ $car->prix }} €</li>
+                        <li>{{ $car->description }}</li>
                     </ul>
                     @if(Auth::user()->id != $car->user_id)
                         <a href="{{ route('renting.create', ['id_car' => $car->id]) }}">Louer</a>

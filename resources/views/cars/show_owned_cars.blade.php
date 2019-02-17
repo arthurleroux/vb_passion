@@ -26,6 +26,7 @@
                             <li>{{ $car->puissance }}</li>
                             <li>{{ $car->carburant }}</li>
                             <li>{{ $car->prix }} €</li>
+                            <li>{{ $car->description }}</li>
                         </ul>
                         <a href="{{ route('car.edit', $car->id) }}" class="btn btn-link">Modifier voiture</a>
 

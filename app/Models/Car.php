@@ -13,7 +13,8 @@ class Car extends Model
         'annee',
         'puissance',
         'carburant',
-        'prix'
+        'prix',
+        'description'
     ];
 
     public function user() {

@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('puissance', 'Puissance') !!}
+                    {!! Form::label('puissance', 'Puissance, cylindrée') !!}
                     {!! Form::text('puissance', old('puissance'), [
                         'class' => 'form-control',
                         'placeholder' => 'Puissance'
@@ -81,8 +81,17 @@
                     !!}
                 </div>
 
+                <div class="form-group">
+                    {!! Form::label('description', 'Description') !!}
+                    {!! Form::textarea('description', old('description'), [
+                        'class' => 'form-control',
+                        'placeholder' => 'Description'
+                        ])
+                    !!}
+                </div>
+
                 <div class="text-center">
-                    {!! Form::submit('Enregistrer la voiture',
+                    {!! Form::submit('Enregistrer modifications',
                         ['class' => 'btn btn-primary'])
                     !!}
                 </div>

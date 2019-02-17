@@ -22,6 +22,7 @@ class CreateCarsTable extends Migration
             $table->integer('puissance')->unsigned();
             $table->enum('carburant', ['essence', 'diesel']);
             $table->integer('prix')->unsigned();
+            $table->text('description');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('puissance', 'Puissance') !!}
+                    {!! Form::label('puissance', 'Puissance, cylindrée') !!}
                     {!! Form::text('puissance', '', [
                         'class' => 'form-control',
                         'placeholder' => 'Puissance'
@@ -71,6 +71,15 @@
                     {!! Form::text('prix', '', [
                         'class' => 'form-control',
                         'placeholder' => 'Prix par jour'
+                        ])
+                    !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('description', 'Description') !!}
+                    {!! Form::textarea('description', '', [
+                        'class' => 'form-control',
+                        'placeholder' => 'Description'
                         ])
                     !!}
                 </div>
