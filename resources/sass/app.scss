@@ -19,6 +19,14 @@
   }
 }
 
-.img-car {
-  width: 100%;
+.car {
+  padding: 0 50px;
+  .slider {
+    .img-container {
+      overflow: hidden;
+      .img-car {
+        width: 100%;
+      }
+    }
+  }
 }

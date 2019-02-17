@@ -10500,7 +10500,15 @@ a.text-dark:focus {
   width: 100px;
 }
 
-.img-car {
+.car {
+  padding: 0 50px;
+}
+
+.car .slider .img-container {
+  overflow: hidden;
+}
+
+.car .slider .img-container .img-car {
   width: 100%;
 }
 

@@ -7,10 +7,12 @@
         </div>
         <div class="row">
             @foreach($cars as $car)
-                <div class="col-md-6">
+                <div class="col-md-6 car">
                     <div class="slider">
                         @foreach($car->images as $image)
-                            <img class="img-car" src="{{ asset('img/cars/car_'.$car->id.'/'.$image->name) }}">
+                            <div class="img-container">
+                                <img class="img-car" src="{{ asset('img/cars/car_'.$car->id.'/'.$image->name) }}">
+                            </div>
                         @endforeach
                     </div>
                     <div>

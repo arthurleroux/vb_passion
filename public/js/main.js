@@ -10,5 +10,13 @@ $(document).ready(function() {
         }
     });
 
-    $('.slider').slick();
+    (function(){
+        var width_slick = $('.img-car').width();
+        var height = width_slick*9/16;
+        $('.img-container').css('height', height);
+    })();
+
+    $('.slider').slick({
+        dots: true
+    });
 });

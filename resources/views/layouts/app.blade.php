@@ -15,6 +15,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('plugins/slick/slick-theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/slick/slick.css') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
