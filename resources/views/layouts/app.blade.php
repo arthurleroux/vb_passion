@@ -60,7 +60,7 @@
                                     Location
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="nav-link" href="{{ route('car.create') }}">Mettre une voiture à louer</a>
+                                    <a class="nav-link" href="{{ route('car.create') }}">Proposer une voiture à louer</a>
                                     <a class="nav-link" href="{{ route('show_owned_cars') }}">Mes voitures en location</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="nav-link" href="{{ route('car.index') }}">Louer une voiture</a>

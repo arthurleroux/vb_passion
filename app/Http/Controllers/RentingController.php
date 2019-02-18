@@ -59,7 +59,7 @@ class RentingController extends Controller
         $input['user_id'] = Auth::user()->id;
         $renting->fill($input)->save();
 
-        return redirect()->route('car.index')->with('success', 'Voiture louée correctement');
+        return redirect()->route('car.index')->with('success', 'Demande de location bien effectuée');
     }
 
     /**
@@ -93,7 +93,15 @@ class RentingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'statut' => 'required'
+        ]);
+
+        $renting = Renting::findOrFail($id);
+        $input = $request->input();
+        $renting->fill($input)->save();
+
+        return redirect()->back()->with('success', 'Réponse envoyée');
     }
 
     /**

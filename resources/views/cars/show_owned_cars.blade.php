@@ -8,8 +8,8 @@
 
     @if(count(Auth::user()->cars) > 0)
         <div class="container">
-            <div class="row">
-                @foreach(Auth::user()->cars as $car)
+            @foreach(Auth::user()->cars as $car)
+                <div class="row">
                     <div class="col-md-6 car">
                         <div class="slider">
                             @foreach($car->images as $image)
@@ -28,6 +28,7 @@
                             <li>{{ $car->prix }} €</li>
                             <li>{{ $car->description }}</li>
                         </ul>
+
                         <a href="{{ route('car.edit', $car->id) }}" class="btn btn-link">Modifier voiture</a>
 
                         {!! Form::model($car,array(
@@ -39,8 +40,18 @@
                         {!! Form::close() !!}
 
                     </div>
-                @endforeach
-            </div>
+                    <div class="col-md-6">
+                        <div class="text-center">
+                            Demandes de location
+                        </div>
+                        <br>
+                        @foreach($car->rentings as $renting)
+                            {{ ucfirst($renting->user->name) }} souhaite louer votre voiture du {{ $renting->date_debut }} au {{ $renting->date_fin }}
+                            <br><br>
+                        @endforeach
+                    </div>
+                </div>
+            @endforeach
         </div>
     @endif
 @endsection

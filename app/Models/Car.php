@@ -24,4 +24,8 @@ class Car extends Model
     public function images() {
         return $this->hasMany('App\Models\Image');
     }
+
+    public function rentings() {
+        return $this->hasMany('App\Models\Renting');
+    }
 }
