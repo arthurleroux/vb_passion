@@ -48,13 +48,15 @@ class RentingController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'car_id'        => 'required'
+            'car_id'        => 'required',
+            'date_debut'    => 'required',
+            'date_fin'      => 'required',
         ]);
 
         $renting = new Renting;
+
         $input = $request->input();
         $input['user_id'] = Auth::user()->id;
-
         $renting->fill($input)->save();
 
         return redirect()->route('car.index')->with('success', 'Voiture louée correctement');

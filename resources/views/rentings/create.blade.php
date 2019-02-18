@@ -12,6 +12,22 @@
                 )) !!}
 
                 <div class="form-group">
+                    {!! Form::label('date_debut', 'Date du début de la location') !!}
+                    {!! Form::date('date_debut', '', [
+                        'class' => 'form-control'
+                        ])
+                    !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('date_fin', 'Date de la fin de la location') !!}
+                    {!! Form::date('date_fin', '', [
+                        'class' => 'form-control'
+                        ])
+                    !!}
+                </div>
+
+                <div class="form-group">
                     {!! Form::hidden('car_id', $car->id, [
                         'class' => 'form-control'
                         ])
@@ -19,7 +35,7 @@
                 </div>
 
                 <div class="text-center">
-                    {!! Form::submit('Louer',
+                    {!! Form::submit('Faire une demande de location',
                         ['class' => 'btn btn-primary'])
                     !!}
                 </div>

@@ -17,6 +17,9 @@ class CreateRentings extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('car_id')->unsigned();
+            $table->date('date_debut');
+            $table->date('date_fin');
+            $table->enum('statut', ['en_attente', 'refusee', 'acceptee']);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

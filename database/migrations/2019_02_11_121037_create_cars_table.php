@@ -19,7 +19,7 @@ class CreateCarsTable extends Migration
             $table->string('marque');
             $table->string('modele');
             $table->integer('annee')->unsigned();
-            $table->integer('puissance')->unsigned();
+            $table->string('puissance');
             $table->enum('carburant', ['essence', 'diesel']);
             $table->integer('prix')->unsigned();
             $table->text('description');
