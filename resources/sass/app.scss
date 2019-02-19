@@ -8,8 +8,12 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background-color: #e8eaec;
+}
+
 .navbar-laravel {
-  background-color: #fff;
+  background-color: rgb(233, 233, 233);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
@@ -30,3 +34,5 @@
     }
   }
 }
+
+@import 'vbpassion';
