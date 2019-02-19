@@ -100,7 +100,6 @@ class RentingController extends Controller
         $renting = Renting::findOrFail($id);
         $input = $request->input();
         $renting->fill($input)->save();
-
         return redirect()->back()->with('success', 'Réponse envoyée');
     }
 

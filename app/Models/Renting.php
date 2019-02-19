@@ -9,6 +9,7 @@ class Renting extends Model
     protected $fillable = [
         'user_id',
         'car_id',
+        'statut',
         'date_debut',
         'date_fin'
     ];

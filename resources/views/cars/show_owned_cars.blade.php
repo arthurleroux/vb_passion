@@ -51,6 +51,33 @@
                                     @foreach($car->rentings->where('statut', 'en_attente') as $renting)
                                         {{ ucfirst($renting->user->name) }} souhaite louer votre voiture du {{ $renting->date_debut }} au {{ $renting->date_fin }}
                                         <br><br>
+                                        {!! Form::model($renting,
+                                        array(
+                                        'route' => array('renting.update', $renting->id),
+                                        'method' => 'PUT'
+                                        )) !!}
+
+                                        <div class="form-group">
+                                            {!! Form::radio('statut', 'acceptee', [
+                                                'class' => 'form-control'
+                                                ])
+                                            !!}
+                                            {!! Form::label('statut', 'Accepter') !!}
+                                            <br>
+                                            {!! Form::radio('statut', 'refusee', [
+                                                'class' => 'form-control'
+                                                ])
+                                            !!}
+                                            {!! Form::label('statut', 'Refuser') !!}
+                                        </div>
+
+                                        <div class="text-center">
+                                            {!! Form::submit('Envoyer la réponse',
+                                                ['class' => 'btn btn-primary'])
+                                            !!}
+                                        </div>
+
+                                        {!! Form::close() !!}
                                     @endforeach
                                 </div>
                             </div>
