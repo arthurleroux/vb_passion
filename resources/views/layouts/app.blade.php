@@ -64,6 +64,7 @@
                                     <a class="nav-link" href="{{ route('show_owned_cars') }}">Mes voitures en location</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="nav-link" href="{{ route('car.index') }}">Louer une voiture</a>
+                                    <a class="nav-link" href="{{ route('renting.index') }}">Mes locations</a>
                                 </div>
                             </li>
                         @endauth
