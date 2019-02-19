@@ -41,14 +41,48 @@
 
                     </div>
                     <div class="col-md-6">
-                        <div class="text-center">
-                            Demandes de location
-                        </div>
-                        <br>
-                        @foreach($car->rentings as $renting)
-                            {{ ucfirst($renting->user->name) }} souhaite louer votre voiture du {{ $renting->date_debut }} au {{ $renting->date_fin }}
-                            <br><br>
-                        @endforeach
+                        @if(count($car->rentings->where('statut', 'en_attente')) > 0)
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="text-center">
+                                        <b>Demandes de location en attente</b>
+                                    </div>
+                                    <br>
+                                    @foreach($car->rentings->where('statut', 'en_attente') as $renting)
+                                        {{ ucfirst($renting->user->name) }} souhaite louer votre voiture du {{ $renting->date_debut }} au {{ $renting->date_fin }}
+                                        <br><br>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endif
+                        @if(count($car->rentings->where('statut', 'acceptee')) > 0)
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="text-center">
+                                        <b>Demandes de location acceptées</b>
+                                    </div>
+                                    <br>
+                                    @foreach($car->rentings->where('statut', 'acceptee') as $renting)
+                                        Vous avez accepté de louer votre voiture à {{ ucfirst($renting->user->name) }} du {{ $renting->date_debut }} au {{ $renting->date_fin }}
+                                        <br><br>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endif
+                        @if(count($car->rentings->where('statut', 'refusee')) > 0)
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="text-center">
+                                        <b>Demandes de location refusées</b>
+                                    </div>
+                                    <br>
+                                    @foreach($car->rentings->where('statut', 'refusee') as $renting)
+                                        Vous avez refusé de louer votre voiture à {{ ucfirst($renting->user->name) }} du {{ $renting->date_debut }} au {{ $renting->date_fin }}
+                                        <br><br>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
             @endforeach
