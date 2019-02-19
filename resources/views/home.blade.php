@@ -26,7 +26,7 @@
                                 <div>&nbsp;</div>
                                 <div>&nbsp;</div>
                             </h4>
-                            <a href="http://www.vbpassion.com/le-rallye-des-anglaises" data-component="button" target="_self" class="btn btn-primary">Inscription</a>
+                            <a href="/rallye_des_anglaises" data-component="button" target="_self" class="btn btn-primary">Inscription</a>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                         <div class="col-lg-12 text-center">
                             <h1>Rallyes Evénements</h1>
                             <h4>Collection & Prestige</h4>
-                            <a href="http://www.vbpassion.com/le-rallye-des-anglaises" data-component="button" target="_self" class="btn btn-primary">Inscription</a>
+                            <a href="#welcome" data-component="button" target="_self" class="btn btn-primary">Découvrir</a>
                         </div>
                     </div>
                 </div>
@@ -65,16 +65,22 @@
         <p class="welcome-p-last">Contactez nous pour en apprendre d'avantage.</p>
         <div class="row">
             <div class="col-lg-4">
-                <img src="/img/img-voiture1.webp" alt="img voiture 1" class="img-fluid">
-                <p><strong>Le prochain rendez vous à ne pas manquer.</strong></p>
+                <a href="/rallye_des_anglaises">
+                    <img src="/img/img-voiture1.webp" alt="img voiture 1" class="img-fluid">
+                    <p><strong>Le prochain rendez vous à ne pas manquer.</strong></p>
+                </a>
             </div>
             <div class="col-lg-4">
-                <img src="/img/img-voiture2.webp" alt="img voiture 2" class="img-fluid">
-                <p><strong>Rallye à la carte, Un rallye à votre image ! </strong></p>
+                <a href="/rallye_carte">
+                    <img src="/img/img-voiture2.webp" alt="img voiture 2" class="img-fluid">
+                    <p><strong>Rallye à la carte, Un rallye à votre image ! </strong></p>
+                </a>
             </div>
             <div class="col-lg-4">
-                <img src="/img/img-voiture3.webp" alt="img voiture 3" class="img-fluid">
-                <p><strong>Contact</strong></p>
+                <a href="/contact">
+                    <img src="/img/img-voiture3.webp" alt="img voiture 3" class="img-fluid">
+                    <p><strong>Contact</strong></p>
+                </a>
             </div>
         </div>
     </section>
